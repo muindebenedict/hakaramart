@@ -866,6 +866,9 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const logout = () => {
+        // First, save the current (now empty) cart to the logged-out user's storage slot
+        saveCartToStorage(state.currentUser);
+
         saveUserToStorage(null); // Clear remembered user
 
         state.currentUser = null;
