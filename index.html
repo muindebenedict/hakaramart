@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarakaMart - Online Shopping Made Easy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="top-header-container">
+            <div class="top-header">
+                <div class="logo" data-action="show-home">
+                    <a href="#">Haraka<span>Mart</span></a>
+                </div>
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search for products, brands and categories...">
+                    <button id="perform-search-btn"><i class="fas fa-search"></i></button>
+                    <div class="search-results" id="search-results"></div>
+                </div>
+                <div class="user-actions">
+                    <a href="#" data-action="show-account" id="account-link"><i class="fas fa-user"></i> <span id="account-link-text">Account</span></a>
+                    <a href="#" data-action="show-help"><i class="fas fa-question-circle"></i> Help</a>
+                    <a href="#" data-action="open-cart">
+                        <i class="fas fa-shopping-cart"></i> Cart
+                        <span class="cart-count" id="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="container">
+                <ul class="nav-links">
+                    <li data-action="show-home"><a href="#">All Categories</a></li>
+                    <li data-action="show-category" data-category="computers"><a href="#">Computers & Tablets</a></li>
+                    <li data-action="show-category" data-category="phones"><a href="#">Phones & Accessories</a></li>
+                    <li data-action="show-category" data-category="electronics"><a href="#">Electronics</a></li>
+                    <li data-action="show-category" data-category="fashion"><a href="#">Fashion</a></li>
+                    <li data-action="show-category" data-category="home"><a href="#">Home & Kitchen</a></li>
+                    <li data-action="show-category" data-category="beauty"><a href="#">Health & Beauty</a></li>
+                    <li data-action="show-category" data-category="supermarket"><a href="#">Supermarket</a></li>
+                    <li data-action="show-category" data-category="baby"><a href="#">Baby Products</a></li>
+                    <li data-action="show-category" data-category="sports"><a href="#">Sporting Goods</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Shop Smarter, Shop Faster</h1>
+                    <p>Discover the best deals on thousands of products with fast delivery and secure payment options.</p>
+                    <a href="#featured-products" class="btn btn-primary" data-action="scroll-to">Shop Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories">
+            <div class="container">
+                <h2 class="section-title">Popular Categories</h2>
+                <div class="category-grid">
+                    <div class="category-card" data-action="show-category" data-category="electronics">
+                        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Electronics">
+                        <h3>Electronics</h3>
+                    </div>
+                    <div class="category-card" data-action="show-category" data-category="fashion">
+                        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Fashion">
+                        <h3>Fashion</h3>
+                    </div>
+                    <div class="category-card" data-action="show-category" data-category="phones">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Phones">
+                        <h3>Phones & Tablets</h3>
+                    </div>
+                    <div class="category-card" data-action="show-category" data-category="home">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Home">
+                        <h3>Home & Kitchen</h3>
+                    </div>
+                    <div class="category-card" data-action="show-category" data-category="beauty">
+                        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Health">
+                        <h3>Health & Beauty</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Shop With Us Section -->
+        <section class="features-section">
+            <div class="container">
+                <h2 class="section-title">Why Shop With Us?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-shipping-fast"></i>
+                        <h3>Fast Delivery</h3>
+                        <p>Get your order delivered to your doorstep in record time, anywhere in the country.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Secure Payments</h3>
+                        <p>Your payments are processed securely with our top-tier encryption and M-Pesa integration.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-headset"></i>
+                        <h3>24/7 Support</h3>
+                        <p>Our dedicated support team is available around the clock to assist you with any query.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section id="featured-products" class="featured-products">
+            <div class="container">
+                <h2 class="section-title">Featured Products</h2>
+                <div class="product-grid" id="featured-grid">
+                    <!-- Products will be loaded by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Daily Deals Section -->
+        <section class="daily-deals">
+            <div class="container">
+                <h2 class="section-title">Daily Deals</h2>
+                <div class="countdown">
+                    Deals end in: <span id="countdown-timer">00:00:00</span>
+                </div>
+                <div class="product-grid" id="deals-grid">
+                    <!-- Deals will be loaded by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Category Pages -->
+    <div id="electronics-page" class="category-page">
+        <div class="container">
+            <button class="btn btn-outline back-btn" data-action="show-home">← Back to Home</button>
+            <h2 class="section-title">Electronics</h2>
+            <div class="product-grid" id="electronics-grid"></div>
+        </div>
+    </div>
+
+    <div id="computers-page" class="category-page">
+        <div class="container">
+            <button class="btn btn-outline back-btn" data-action="show-home">← Back to Home</button>
+            <h2 class="section-title">Computers & Tablets</h2>
+            <div class="product-grid" id="computers-grid"></div>
+        </div>
+    </div>
+
+    <div id="phones-page" class="category-page">
+        <div class="container">
+            <button class="btn btn-outline back-btn" data-action="show-home">← Back to Home</button>
+            <h2 class="section-title">Phones & Accessories</h2>
+            <div class="product-grid" id="phones-grid"></div>
+        </div>
+    </div>
+
+    <div id="fashion-page" class="category-page">
+        <div class="container">
+            <button class="btn btn-outline back-btn" data-action="show-home">← Back to Home</button>
+            <h2 class="section-title">Fashion</h2>
+            <div class="product-grid" id="fashion-grid"></div>
+        </div>
+    </div>
+
+    <div id="home-page" class="category-page">
+        <div class="container">
+            <button class="btn btn-outline back-btn" data-action="show-home">← Back to Home</button>
+            <h2 class="section-title">Home & Kitchen</h2>
+            <div class="product-grid" id="home-grid"></div>
+        </div>
+    </div>
+
+    <div id="beauty-page" class="category-page">
+        <div class="container">
+            <button class="btn btn-outline back-btn" data-action="show-home">← Back to Home</button>
+            <h2 class="section-title">Health & Beauty</h2>
+            <div class="product-grid" id="beauty-grid"></div>
+        </div>
+    </div>
+
+    <div id="baby-page" class="category-page">
+        <div class="container">
+            <button class="btn btn-outline back-btn" data-action="show-home">← Back to Home</button>
+            <h2 class="section-title">Baby Products</h2>
+            <div class="product-grid" id="baby-grid"></div>
+        </div>
+    </div>
+
+    <div id="sports-page" class="category-page">
+        <div class="container">
+            <button class="btn btn-outline back-btn" data-action="show-home">← Back to Home</button>
+            <h2 class="section-title">Sporting Goods</h2>
+            <div class="product-grid" id="sports-grid"></div>
+        </div>
+    </div>
+
+    <div id="supermarket-page" class="category-page">
+        <div class="container">
+            <button class="btn btn-outline back-btn" data-action="show-home">← Back to Home</button>
+            <h2 class="section-title">Supermarket</h2>
+            <div class="product-grid" id="supermarket-grid"></div>
+        </div>
+    </div>
+
+    <!-- Product Detail Page -->
+    <div id="product-detail-page" class="category-page">
+        <div class="container">
+            <button class="btn btn-outline back-btn" data-action="show-home">← Back to All Products</button>
+            <div id="product-detail-content" class="product-detail-layout">
+                <!-- Product details will be loaded by JavaScript here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Order History Page -->
+    <div id="order-history-page" class="category-page">
+        <div class="container">
+            <button class="btn btn-outline back-btn" data-action="show-account">← Back to Account</button>
+            <h2 class="section-title">My Order History</h2>
+            <div id="order-history-content"></div>
+        </div>
+    </div>
+
+    <!-- Wishlist Page -->
+    <div id="wishlist-page" class="category-page">
+        <div class="container">
+            <button class="btn btn-outline back-btn" data-action="show-account">← Back to Account</button>
+            <h2 class="section-title">My Wishlist</h2>
+            <div class="product-grid" id="wishlist-grid"></div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <span class="close-modal" data-action="close-modal" data-modal="cart-modal">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total" id="cart-total">Total: Ksh 0</div>
+            <div class="cart-modal-actions">
+                <button class="btn btn-danger" data-action="clear-cart">Clear Cart</button>
+                <button class="btn btn-primary checkout-btn" data-action="checkout">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="login-modal">
+        <div class="login-content">
+            <span class="close-modal" data-action="close-modal" data-modal="login-modal">&times;</span>
+            <h2>Login to Your Account</h2>
+            <div class="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-container">
+                        <input type="password" id="password" placeholder="Enter your password">
+                        <span class="toggle-password" data-action="toggle-password">
+                            <i class="fas fa-eye"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="login-options">
+                    <label class="remember-me-label"><input type="checkbox" id="remember-me"> Remember Me</label>
+                    <a href="#" data-action="open-modal" data-modal="forgot-password-modal" style="font-size: 0.9em; color: var(--primary);">Forgot password?</a>
+                </div>
+                <button class="btn btn-primary" style="width: 100%;" data-action="login">Login</button>
+                <div class="social-login">
+                    <button data-action="open-modal" data-modal="google-signin-modal">
+                        <i class="fab fa-google"></i> Sign in with Google
+                    </button>
+                    <button data-action="open-modal" data-modal="email-signin-modal">
+                        <i class="fas fa-envelope"></i> Sign in with Email
+                    </button>
+                </div>
+                <div class="login-footer">
+                    <p>Don't have an account? <a href="#" data-action="open-modal" data-modal="signup-modal">Sign up</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Account Modal -->
+    <div id="account-modal" class="account-modal">
+        <div class="account-content">
+            <span class="close-modal" data-action="close-modal" data-modal="account-modal">&times;</span>
+            <h2>My Account</h2>
+            <div id="account-info">
+                <p>You are not logged in. <a href="#" data-action="open-login">Login</a> to view your account.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Help Modal -->
+    <div id="help-modal" class="help-modal">
+        <div class="help-content">
+            <span class="close-modal" data-action="close-modal" data-modal="help-modal">&times;</span>
+            <h2>Help Center</h2>
+            <div class="help-content">
+                <h3>Frequently Asked Questions</h3>
+                <p><strong>Q: How do I track my order?</strong></p>
+                <p>A: You can track your order from the "My Account" section after logging in.</p>
+                <p><strong>Q: What are the shipping costs?</strong></p>
+                <p>A: Shipping costs vary based on your location and are calculated at checkout.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirm-modal" class="confirm-modal">
+        <div class="confirm-content">
+            <h3 id="confirm-title">Are you sure?</h3>
+            <p id="confirm-message">This action cannot be undone.</p>
+            <div class="confirm-actions">
+                <button class="btn btn-outline" data-action="confirm-cancel">Cancel</button>
+                <button class="btn btn-danger" data-action="confirm-proceed">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- M-Pesa Payment Modal -->
+    <div id="mpesa-modal" class="mpesa-modal">
+        <div class="mpesa-content">
+            <span class="close-modal" data-action="close-modal" data-modal="mpesa-modal">&times;</span>
+            <h2>M-Pesa Payment</h2>
+            <p>Please enter your M-Pesa phone number to complete the purchase.</p>
+            <div class="form-group">
+                <label for="mpesa-phone">Phone Number (e.g., 0712345678)</label>
+                <input type="tel" id="mpesa-phone" placeholder="0712345678" autocomplete="tel">
+            </div>
+            <div class="mpesa-total">
+                <span>Total to Pay:</span>
+                <strong id="mpesa-total-amount">Ksh 0</strong>
+            </div>
+            <button class="btn btn-success" style="width: 100%;" data-action="process-mpesa-payment">Pay Now</button>
+        </div>
+    </div>
+
+    <!-- About Us Modal -->
+    <div id="about-modal" class="about-modal">
+        <div class="about-content">
+            <span class="close-modal" data-action="close-modal" data-modal="about-modal">&times;</span>
+            <h2>About HarakaMart</h2>
+            <p>Welcome to HarakaMart, your number one source for all things fast and convenient. We're dedicated to giving you the very best of products, with a focus on quality, customer service, and uniqueness.</p>
+            <p>Founded in 2024, HarakaMart has come a long way from its beginnings. When we first started out, our passion for providing a faster, easier online shopping experience drove us to do intense research, and gave us the impetus to turn hard work and inspiration into a booming online store. We now serve customers all over the country and are thrilled to be a part of the fair-trade wing of the e-commerce industry.</p>
+            <p>We hope you enjoy our products as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.</p>
+        </div>
+    </div>
+
+    <!-- Terms & Conditions Modal -->
+    <div id="terms-modal" class="terms-modal">
+        <div class="terms-content">
+            <span class="close-modal" data-action="close-modal" data-modal="terms-modal">&times;</span>
+            <h2>Terms & Conditions</h2>
+            <p>Please read these terms and conditions carefully before using Our Service.</p>
+            <h3>1. Agreement to Terms</h3>
+            <p>By using our services, you agree to be bound by these Terms. If you disagree with any part of the terms, then you may not access the service.</p>
+            <h3>2. Purchases</h3>
+            <p>If you wish to purchase any product or service made available through the Service, you may be asked to supply certain information relevant to your Purchase including, without limitation, your M-Pesa phone number.</p>
+            <h3>3. Changes</h3>
+            <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. What constitutes a material change will be determined at our sole discretion.</p>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="privacy-modal">
+        <div class="privacy-content">
+            <span class="close-modal" data-action="close-modal" data-modal="privacy-modal">&times;</span>
+            <h2>Privacy Policy</h2>
+            <p>Your privacy is important to us. It is HarakaMart's policy to respect your privacy regarding any information we may collect from you across our website.</p>
+            <p>We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent. We also let you know why we’re collecting it and how it will be used.</p>
+        </div>
+    </div>
+
+    <!-- FAQ Modal -->
+    <div id="faq-modal" class="faq-modal">
+        <div class="faq-content">
+            <span class="close-modal" data-action="close-modal" data-modal="faq-modal">&times;</span>
+            <h2>Frequently Asked Questions</h2>
+            <p><strong>Q: How long does delivery take?</strong></p>
+            <p>A: Delivery within the city takes 2-3 hours. Outside the city, it may take up to 24 hours.</p>
+            <p><strong>Q: What payment methods do you accept?</strong></p>
+            <p>A: We currently accept M-Pesa for all transactions.</p>
+        </div>
+    </div>
+
+    <!-- Contact Us Modal -->
+    <div id="contact-modal" class="contact-modal">
+        <div class="contact-content">
+            <span class="close-modal" data-action="close-modal" data-modal="contact-modal">&times;</span>
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you! Whether you have a question about features, trials, pricing, or anything else, our team is ready to answer all your questions.</p>
+            <p><strong>Email:</strong> <a href="mailto:support@harakamart.com">support@harakamart.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+254712345678">+254 712 345 678</a></p>
+        </div>
+    </div>
+
+    <!-- Shipping & Returns Modal -->
+    <div id="shipping-modal" class="shipping-modal">
+        <div class="shipping-content">
+            <span class="close-modal" data-action="close-modal" data-modal="shipping-modal">&times;</span>
+            <h2>Shipping & Returns</h2>
+            <div class="faq-content">
+                <p><strong>Q: What are your shipping rates?</strong></p>
+                <p>A: Shipping rates are calculated at checkout based on your location. We offer competitive rates for both city and nationwide delivery.</p>
+                <p><strong>Q: How do I return an item?</strong></p>
+                <p>A: Our full returns portal is coming soon. In the meantime, please contact our customer support to initiate a return.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Track Order Modal -->
+    <div id="track-order-modal" class="track-order-modal">
+        <div class="track-order-content">
+            <span class="close-modal" data-action="close-modal" data-modal="track-order-modal">&times;</span>
+            <h2>Track Your Order</h2>
+            <p>Enter your Order ID below to check its status. (e.g., HM-12345, HM-67890)</p>
+            <div class="form-group">
+                <label for="order-id-input">Order ID</label>
+                <input type="text" id="order-id-input" placeholder="Enter your Order ID">
+            </div>
+            <button class="btn btn-primary" style="width: 100%;" data-action="track-order">Track Order</button>
+            <div id="order-status-result" class="order-status-result">
+                <!-- Tracking results will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Careers Modal -->
+    <div id="careers-modal" class="careers-modal">
+        <div class="careers-content">
+            <span class="close-modal" data-action="close-modal" data-modal="careers-modal">&times;</span>
+            <h2>Careers</h2>
+            <p>We are always looking for talented individuals to join our team. Check back soon for job openings.</p>
+        </div>
+    </div>
+
+    <!-- Blog Modal -->
+    <div id="blog-modal" class="blog-modal">
+        <div class="blog-content">
+            <span class="close-modal" data-action="close-modal" data-modal="blog-modal">&times;</span>
+            <h2>Blog</h2>
+            <p>Our blog is coming soon! Stay tuned for updates, product guides, and more.</p>
+        </div>
+    </div>
+
+    <!-- Press Modal -->
+    <div id="press-modal" class="press-modal">
+        <div class="press-content">
+            <span class="close-modal" data-action="close-modal" data-modal="press-modal">&times;</span>
+            <h2>Press</h2>
+            <p>For all press inquiries, please contact us at press@harakamart.com.</p>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signup-modal" class="signup-modal">
+        <div class="signup-content">
+            <span class="close-modal" data-action="close-modal" data-modal="signup-modal">&times;</span>
+            <h2>Sign Up for HarakaMart</h2>
+            <p>Create your account to enjoy faster checkout and personalized recommendations.</p>
+            <div class="form-group">
+                <label for="signup-username">Username</label>
+                <input type="text" id="signup-username" placeholder="Choose a username">
+            </div>
+            <div class="form-group">
+                <label for="signup-email">Email</label>
+                <input type="email" id="signup-email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="signup-password">Password</label>
+                <input type="password" id="signup-password" placeholder="Create a password">
+            </div>
+            <button class="btn btn-primary" style="width: 100%;" data-action="register-user">Sign Up</button>
+            <div class="login-footer">
+                <p>Already have an account? <a href="#" data-action="open-modal" data-modal="login-modal">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgot-password-modal" class="forgot-password-modal">
+        <div class="forgot-password-content">
+            <span class="close-modal" data-action="close-modal" data-modal="forgot-password-modal">&times;</span>
+            <h2>Forgot Password?</h2>
+            <p>Enter your email address and we'll send you a link to reset your password.</p>
+            <div class="form-group">
+                <label for="forgot-password-email">Email</label>
+                <input type="email" id="forgot-password-email" placeholder="Enter your email">
+            </div>
+            <button class="btn btn-primary" style="width: 100%;" data-action="reset-password">Reset Password</button>
+            <div class="login-footer">
+                <p>Remembered your password? <a href="#" data-action="open-modal" data-modal="login-modal">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Google Sign In Modal -->
+    <div id="google-signin-modal" class="google-signin-modal">
+        <div class="google-signin-content">
+            <span class="close-modal" data-action="close-modal" data-modal="google-signin-modal">&times;</span>
+            <h2>Sign in with Google</h2>
+            <p>You will be redirected to Google to complete your sign-in. (This is a simulation)</p>
+            <button class="btn btn-primary" style="width: 100%;" data-action="proceed-google-signin">Continue with Google</button>
+            <div class="login-footer">
+                <p><a href="#" data-action="open-modal" data-modal="login-modal">Back to Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Email Sign In Modal -->
+    <div id="email-signin-modal" class="email-signin-modal">
+        <div class="email-signin-content">
+            <span class="close-modal" data-action="close-modal" data-modal="email-signin-modal">&times;</span>
+            <h2>Sign in with Email</h2>
+            <p>Enter your email address to receive a magic link to sign in instantly.</p>
+            <div class="form-group">
+                <label for="email-signin-input">Email</label>
+                <input type="email" id="email-signin-input" placeholder="your@example.com">
+            </div>
+            <button class="btn btn-primary" style="width: 100%;" data-action="send-magic-link">Send Magic Link</button>
+            <div class="login-footer">
+                <p><a href="#" data-action="open-modal" data-modal="login-modal">Back to Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Shop</h3>
+                    <ul class="footer-links">
+                        <li data-action="show-category" data-category="computers"><a href="#">Computers & Tablets</a></li>
+                        <li data-action="show-category" data-category="phones"><a href="#">Phones & Accessories</a></li>
+                        <li data-action="show-category" data-category="electronics"><a href="#">Electronics</a></li>
+                        <li data-action="show-category" data-category="fashion"><a href="#">Fashion</a></li>
+                        <li data-action="show-category" data-category="home"><a href="#">Home & Kitchen</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li data-action="open-modal" data-modal="contact-modal"><a href="#">Contact Us</a></li>
+                        <li data-action="open-modal" data-modal="faq-modal"><a href="#">FAQ</a></li>
+                        <li data-action="open-modal" data-modal="shipping-modal"><a href="#">Shipping & Returns</a></li>
+                        <li data-action="open-modal" data-modal="track-order-modal"><a href="#">Track Order</a></li>
+                        <li data-action="open-modal" data-modal="privacy-modal"><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>About HarakaMart</h3>
+                    <ul class="footer-links">
+                        <li data-action="open-modal" data-modal="about-modal"><a href="#">About Us</a></li>
+                        <li data-action="open-modal" data-modal="careers-modal"><a href="#">Careers</a></li>
+                        <li data-action="open-modal" data-modal="terms-modal"><a href="#">Terms & Conditions</a></li>
+                        <li data-action="open-modal" data-modal="blog-modal"><a href="#">Blog</a></li>
+                        <li data-action="open-modal" data-modal="press-modal"><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get special offers, free giveaways, and exclusive deals.</p>
+                    <div class="newsletter">
+                        <input type="email" id="newsletter-email" placeholder="Enter your email">
+                        <button class="btn btn-primary" style="width: 100%;" data-action="subscribe-newsletter">Subscribe</button>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#" data-action="open-social" data-platform="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" data-action="open-social" data-platform="twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" data-action="open-social" data-platform="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" data-action="open-social" data-platform="youtube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 HarakaMart. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top-btn" data-action="scroll-to-top" title="Go to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
