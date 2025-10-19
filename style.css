@@ -85,7 +85,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding: 10px 15px;
     font-size: 14px;
 }
 
@@ -181,6 +181,11 @@ header {
     justify-content: center;
     font-weight: bold;
 }
+.top-header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 
 .main-nav {
     background-color: var(--dark);

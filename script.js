@@ -332,7 +332,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span>(${product.reviews})</span>
                 </div>
                 <div class="product-actions">
-                    <button class="btn btn-outline" data-action="order-now" data-name="${product.name}" data-price="${product.price}" data-image="${product.image}">Order Now</button>
+                    <button class="btn btn-primary" data-action="order-now" data-name="${product.name}" data-price="${product.price}" data-image="${product.image}">Order Now</button>
                     <button class="btn btn-outline" data-action="add-to-cart" data-name="${product.name}" data-price="${product.price}" data-image="${product.image}">Add to Cart</button>
                 </div>
             </div>
@@ -489,7 +489,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     Discover the amazing features of the ${product.name}. This product combines style and functionality, offering a top-tier experience. Perfect for your needs, it's built with quality materials and the latest technology.
                 </p>
                 <div class="product-actions">
-                    <button class="btn btn-outline" data-action="order-now" data-name="${product.name}" data-price="${product.price}" data-image="${product.image}">Order Now</button>
+                    <button class="btn btn-primary" data-action="order-now" data-name="${product.name}" data-price="${product.price}" data-image="${product.image}">Order Now</button>
                     <button class="btn btn-outline" data-action="add-to-cart" data-name="${product.name}" data-price="${product.price}" data-image="${product.image}">Add to Cart</button>
                 </div>
             </div>
@@ -866,13 +866,14 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const logout = () => {
-        // First, save the current (now empty) cart to the logged-out user's storage slot
-        saveCartToStorage(state.currentUser);
+        // Clear the cart in the application's state first.
+        state.cart = [];
+
+        // Now, save the empty cart to the user's storage slot before logging them out.
+        saveCartToStorage(state.currentUser); 
 
         saveUserToStorage(null); // Clear remembered user
-
         state.currentUser = null;
-        state.cart = []; // Reset cart in the application state
 
         // Update UI to reflect the changes
         updateCartDisplay();
